@@ -1,4 +1,4 @@
-# 2020WeiLinyi
+# 2020-MLF-Project-Faking jobs
 # Group members
 | Name  | Student number |
 | ------------- | ------------- |

@@ -1,6 +1,6 @@
 # 2020WeiLinyi
 # Group members
-| Name  | Studentnumber |
+| Name  | Student number |
 | ------------- | ------------- |
 | [魏麟懿Linyi Wei](https://github.com/Linyi-Wei)  |  1901212647 |
 | [庞博Bo pang]()  | 1901212498  |

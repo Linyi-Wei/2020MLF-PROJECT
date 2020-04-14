@@ -1,4 +1,4 @@
-# Fake JobPosting Prediction
+# Detecting Fake Jobposting
 # Group members
 | Name  | Student number |
 | ------------- | ------------- |

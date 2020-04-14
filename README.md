@@ -3,7 +3,7 @@
 | Name  | Student number |
 | ------------- | ------------- |
 | [魏麟懿Linyi Wei](https://github.com/Linyi-Wei)  |  1901212647 |
-| [庞博Bo pang]()  | 1901212498  |
+| [庞博Bo Pang]()  | 1901212498  |
 | [赵舒婷Shuting Zhao](https://github.com/Shuuting) | 1901212679 |
 ## PART 1 Introduction
 ### 1.1 Motivation

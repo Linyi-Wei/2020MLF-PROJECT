@@ -121,7 +121,7 @@ The following table illustrates the final results for our models.
 
 We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
-![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/ROC.jpg)
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/ROC.jpg)</div>
 
 # Part 6 Possible Improvements
 Now we only get preliminary results. Listed below are some of the problems we encountered in the operation, which we will correct in the final submitted project.

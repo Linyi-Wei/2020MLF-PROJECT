@@ -87,7 +87,7 @@ For the y variable and the six X variables obtained in 3.2, we used LR / SVM / T
 <br>Listed below are the optimal parameters and corresponding confusion_matrix we obtained for different models.
 
 ## 4.1	Logistic Regression
-<img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-LR.png"/>
+<br><img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-LR.png"/>
 #### C = 0.001:
 Precision: 0.951
 <br>Recall: 1.000 

@@ -58,18 +58,15 @@ Fake jobposting posts similar-length description, requirements and benefit to ma
 
 # Part 3 Data Preprocessing
 ## 3.1 Feature trimming
-a. Delete 6 features for reasons as follows:
+#### a. Delete 6 features for reasons as follows:
   * 'job_id' is unique for each sample and useless for detecting fake job.
   * 'title' is nearly unique and difficult to deal with.
   * 'location' is also difficult to handle and we want to find the generality of fake jobposting wherever it is.
   * 'department' is just like job title with many different values.
   * 'industry' and 'function' is also difficult to deal with and uselless for finding generality.
-<br>
-<br>b. To avoid text analysis and simplify the model, use the length of 'company_profile'，'description'，'requirements'，'benefits' to replace the text.
-<br>
-<br>c. Map ordinal feature: 'required_education'，'required_experience'
-* Map required education level including 'Bachelor's Degree', 'High School or equivalent'.etc with integer from 0 to 10.
-* Map required experience including 'Mid-Senior level','Associate'.etc with integer from 0 to 5.
-<br>
-<br>d. Use one-hot encoding to encode nominal features
-* Employmnet type is encoded to 4 columns to represent 5 different types. 
+#### b. To avoid text analysis and simplify the model, use the length of 'company_profile'，'description'，'requirements'，'benefits' to replace the text.
+#### c. Map ordinal feature: 'required_education'，'required_experience'.<br>
+ * Map required education level including 'Bachelor's Degree', 'High School or equivalent'.etc with integer from 0 to 10.
+Map required experience including 'Mid-Senior level','Associate'.etc with integer from 0 to 5.
+#### d. Use one-hot encoding to encode nominal features.<br>
+ * Employmnet type is encoded to 4 columns to represent 5 different types. 

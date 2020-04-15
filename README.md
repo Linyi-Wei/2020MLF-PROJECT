@@ -75,3 +75,5 @@ Map required experience including 'Mid-Senior level','Associate'.etc with intege
 ## 3.2 Feature Selection
 After feature trimming, there are 17 features. In the meantime,  one-hot excoding may cause multicollinearity. So we need select important features. 
 <br>We choose KNN to select features.
+![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.%20Data%20Preprocessing/KNN.png)
+We finally choose 

@@ -64,9 +64,14 @@ Fake jobposting posts similar-length description, requirements and benefit to ma
   * 'location' is also difficult to handle and we want to find the generality of fake jobposting wherever it is.
   * 'department' is just like job title with many different values.
   * 'industry' and 'function' is also difficult to deal with and uselless for finding generality.
-#### b. To avoid text analysis and simplify the model, use the length of 'company_profile'，'description'，'requirements'，'benefits' to replace the text.
-#### c. Map ordinal feature: 'required_education'，'required_experience'.<br>
+#### b. Replace text features with length
+ * To avoid text analysis and simplify the model, use the length of 'company_profile'，'description'，'requirements'，'benefits' to replace the text.
+#### c. Map ordinal feature: 'required_education'，'required_experience'
  * Map required education level including 'Bachelor's Degree', 'High School or equivalent'.etc with integer from 0 to 10.
 Map required experience including 'Mid-Senior level','Associate'.etc with integer from 0 to 5.
-#### d. Use one-hot encoding to encode nominal features.<br>
- * Employmnet type is encoded to 4 columns to represent 5 different types. 
+#### d. Use one-hot encoding to encode nominal features
+ * Employment type is encoded to 4 columns to represent 5 different types. 
+
+## 3.2 Feature Selection
+After feature trimming, there are 17 features. In the meantime,  one-hot excoding may cause multicollinearity. So we need select important features. 
+<br>We choose KNN to select features.

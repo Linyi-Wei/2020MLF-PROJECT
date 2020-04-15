@@ -102,7 +102,7 @@ Precision: 0.951
 <br>F1: 0.975
 
 ## 4.3	Decision Tree
-<img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg"/>
+<br><img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg"/>
 #### max_depth = 14:	
 Precision: 0.957
 <br>Recall: 0.997

@@ -86,14 +86,23 @@ For the y variable and the six X variables obtained in 3.2, we used LR / SVM / T
 <br>As mentioned in our motivation section, many fake JD senders will often ask the delivery person to solve many additional problems, and these answers are often used for profit. Our research goal is to avoid the loss of time, energy and personal information exposure caused by delivering information to fake JD. In our sample, we use y = 0 (true JD) as the positive label parameter in the code, so we use PRE as the model cross-validation screening and evaluation standard. The larger the PRE value, the smaller the FP/P ratio, and the easier it is for job seekers to avoid false JD.
 <br>Listed below are the optimal parameters and corresponding confusion_matrix we obtained for different models.
 ## 4.1	Logistic Regression
-C = 0.001	Precision: 0.951, Recall: 1.000, F1: 0.975
+C = 0.001:
+<br>Precision: 0.951
+<br>Recall: 1.000 
+<br>F1: 0.975
 <br>(需要图片)
 ## 4.2	SVM
-*We only run linear kernel due to the CPU limitation.
-<br>C = 0.001	Precision: 0.951, Recall: 1.000, F1: 0.975
+(We only run linear kernel due to the CPU limitation.)
+<br>C = 0.001	
+<br>Precision: 0.951
+<br>Recall: 1.000
+<br>F1: 0.975
 
 ## 4.3	Decision Tree
-max_depth = 14	Precision: 0.957, Recall: 0.997, F1: 0.977
+max_depth = 14	
+<br>Precision: 0.957
+<br>Recall: 0.997
+<br>F1: 0.977
 
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
 

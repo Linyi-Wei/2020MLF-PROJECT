@@ -90,20 +90,20 @@ For the y variable and the six X variables obtained in 3.2, we used LR / SVM / T
 Precision: 0.951
 <br>Recall: 1.000 
 <br>F1: 0.975
-<br>(需要图片)
+![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-LR.png)
 ## 4.2	SVM
 (We only run linear kernel due to the CPU limitation.)
 #### C = 0.001:	
 Precision: 0.951
 <br>Recall: 1.000
 <br>F1: 0.975
-
+![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-SVM.jpg)
 ## 4.3	Decision Tree
 #### max_depth = 14:	
 Precision: 0.957
 <br>Recall: 0.997
 <br>F1: 0.977
-
+![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg)
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
 
 # Part 5 Redo the process in PCA dimensionality-reduced data
@@ -119,9 +119,9 @@ The following table illustrates the final results for our models.
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
 | PCA_Tree | 0.974* | 0.875 | 0.922 |
 
-We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (*PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
+We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
-<br>(需要图片)
+![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/ROC.jpg)
 
 # Part 6 Possible Improvements
 Now we only get preliminary results. Listed below are some of the problems we encountered in the operation, which we will correct in the final submitted project.

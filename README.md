@@ -87,20 +87,20 @@ For the y variable and the six X variables obtained in 3.2, we used LR / SVM / T
 <br>Listed below are the optimal parameters and corresponding confusion_matrix we obtained for different models.
 ## 4.1	Logistic Regression
 #### C = 0.001:
-<br>Precision: 0.951
+Precision: 0.951
 <br>Recall: 1.000 
 <br>F1: 0.975
 <br>(需要图片)
 ## 4.2	SVM
 (We only run linear kernel due to the CPU limitation.)
 #### C = 0.001:	
-<br>Precision: 0.951
+Precision: 0.951
 <br>Recall: 1.000
 <br>F1: 0.975
 
 ## 4.3	Decision Tree
 #### max_depth = 14:	
-<br>Precision: 0.957
+Precision: 0.957
 <br>Recall: 0.997
 <br>F1: 0.977
 

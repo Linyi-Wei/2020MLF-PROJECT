@@ -39,3 +39,21 @@ There are 18 variables initially contains 17 features and one target label.
 （插入一张流程图）
 
 ## Part 2 Exploratory Data Analysis
+### 2.1 The explanation power of category labels
+Let's take a look at how many counts of real and fake posts there are, in relation to the top unique values of a feature.
+<div align="center">
+<img src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/2.Exploratory%20Data%20Analysis/telecommuting.jpg" height="300px" width="430px" alt="图片说明" > 
+ <img src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/2.Exploratory%20Data%20Analysis/logo.jpg" height="300px" width="430px" alt="图片说明" >
+</div>
+
+<div align="center">
+<img src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/2.Exploratory%20Data%20Analysis/question.jpg" height="300px" width="430px" alt="图片说明" > 
+ <img src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/2.Exploratory%20Data%20Analysis/type.jpg" height="300px" width="430px" alt="图片说明" >
+</div>
+
+<div align="center">
+<img src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/2.Exploratory%20Data%20Analysis/exp.jpg" height="300px" width="430px" alt="图片说明" > 
+ <img src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/2.Exploratory%20Data%20Analysis/edu.jpg" height="300px" width="430px" alt="图片说明" >
+</div>
+
+![](https://www.kaggleusercontent.com/kf/31604270/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..JEYS1ldY5tjCSNSWllKWXg.txUS6QP9IBKHsMny1Y1fcZFwRQohk2gklBroGRwqWSBcpqAL9HwRpzViUkY8P2l0Ue8S7qF8-vYgaDw8JtJ5dTksVgeMVNpL-73RNlNOZlLrSdco-4rEg9Exn-YhhyDdmX-voJuLEKatzR5-_NCQSjFxKswjPRd8HKbCcXlvdzKzbtlaPRalf8jZ8o4rh1ro1YVdvS7ToKMqn-3fsMGTxNe0VwBdkxk8YzpupjbmmI-AIMaOvg_pu-PYMfGsQnEjzthjOABMvPSXcDsrefb6aKo49ZVP1o2sJAjcPYWtL9V1OyyJQuIbT4UoIlNMsSiej3njzjh-M3aDLUIlthCn00kACI31XKk8eXzhiOFILC07VdOnCCdcgXlE-jaIaqwrFOh67c4eRqUzPxQ6BS4kUICJkHI-7e7oZvdOdZofDCQ9VIl5ZCM17jThXUOQgQvYlfcr5TE8VMIHHOH9vMeCJfV2rSsHgblORxG6Rc23W-3r7gk5wlCe3u3xbXX6q-b-s2D1ggeN518oOTYJShYXQfC_B315UIxCzbcKkiy4taSyeWH2m5hJ6n1mkGkF3M7MC9tURT4AMCgEdXPU1kLoTqxLVq10_b_-4iK1NJIBDgAyZLqTg4pDhqk6Z_-YhcV8PKhVidUEiVs6Z-yPg6vP8cn955VqphxYUmg_RF3N4rY.Us-BEQYY-Vb1vtBSc7eN4w/__results___files/__results___19_0.png)

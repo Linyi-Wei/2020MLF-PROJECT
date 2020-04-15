@@ -2,9 +2,9 @@
 ## Group members
 | Name  | Student number |
 | ------------- | ------------- |
-| [魏麟懿Linyi Wei](https://github.com/Linyi-Wei)  |  1901212647 |
-| [庞博Bo Pang]()  | 1901212498  |
-| [赵舒婷Shuting Zhao](https://github.com/Shuuting) | 1901212679 |
+| [魏麟懿 Linyi Wei](https://github.com/Linyi-Wei)  |  1901212647 |
+| [庞博 Bo Pang]()  | 1901212498  |
+| [赵舒婷 Shuting Zhao](https://github.com/Shuuting) | 1901212679 |
 # PART 1 Introduction
 ## 1.1 Motivation
 Recently, there's a news that a finance major pretended to be a interviewer of CICC or CITIC to get answesrs of written examination from those interviewers. With such scams keeping emerging, abilities to identfy fake jobposting becomes more important. In the past years, people distinguish fake jobposting by intuition. For example, abnormal high wage may suggest fake jobposting. While nowadays big data techique enable us to process these jobposting data and identify fake ones more reliable using model.

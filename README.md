@@ -75,7 +75,7 @@ Map required experience including 'Mid-Senior level','Associate'.etc with intege
 ## 3.2 Feature Selection
 After feature trimming, there are 17 features. In the meantime,  one-hot excoding may cause multicollinearity. So we need select important features. 
 <br>We choose KNN to do sequential background selection.
-<br><center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.%20Data%20Preprocessing/KNN.png)</center>
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.%20Data%20Preprocessing/KNN.png)</div>
 <br>We finally choose 6 features ('required_education', 'salary_range_min', 'employment_type_Other',
        'employment_type_Part-time', 'employment_type_Temporary',
        'employment_type_Unknown') which perform a relative high accuracy over 0.975. 

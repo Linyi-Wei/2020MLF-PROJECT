@@ -100,8 +100,8 @@ max_depth = 14	Precision: 0.957, Recall: 0.997, F1: 0.977
 # Part 5 Redo the process in PCA dimensionality-reduced data
 In this part, we use PCA method to replace the KNN method in 3.2. We set components n=2 for better program velocity. After that, we conduct LR/SVM/Tree algorithms again. Notice in code we use pipeline method to package them together.
 The following table illustrates the final results for our models.
-| PRE* | REC | F1-score |
-| ------------- | ------------- |
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
 | Trust All JD | 0.951 | 1.000 | 0.975 |
 | KNN_LR | 0.951 | 1.000 | 0.975 |
 | KNN_SVM(linear) | 0.951 | 1.000 | 0.975 |
@@ -109,6 +109,7 @@ The following table illustrates the final results for our models.
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
 | PCA_Tree | 0.974* | 0.875 | 0.922 |
+
 We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (*PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
 <br>(需要图片)

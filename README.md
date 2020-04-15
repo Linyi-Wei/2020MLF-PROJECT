@@ -79,3 +79,5 @@ After feature trimming, there are 17 features. In the meantime,  one-hot excodin
 <br>We finally choose 6 features ('required_education', 'salary_range_min', 'employment_type_Other',
        'employment_type_Part-time', 'employment_type_Temporary',
        'employment_type_Unknown') which perform a relative high accuracy over 0.975. 
+<br>After feature selection, training accuracy is 0.979 and test accuracy is 0.977 with only no more than 0.5 percent differences to that before. Six features is reasonable to be selected.
+

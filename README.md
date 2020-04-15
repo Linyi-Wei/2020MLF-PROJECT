@@ -111,6 +111,7 @@ Precision: 0.957
 <br>
 <br>
 <br>
+<br>
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
 
 # Part 5 Redo the process in PCA dimensionality-reduced data

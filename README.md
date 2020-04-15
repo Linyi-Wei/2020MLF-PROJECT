@@ -102,11 +102,15 @@ Precision: 0.951
 <br>F1: 0.975
 
 ## 4.3	Decision Tree
-<br><img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg"/>
+<img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg"/>
+
 #### max_depth = 14:	
 Precision: 0.957
 <br>Recall: 0.997
 <br>F1: 0.977
+<br>
+<br>
+<br>
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
 
 # Part 5 Redo the process in PCA dimensionality-reduced data

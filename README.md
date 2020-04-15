@@ -90,20 +90,20 @@ For the y variable and the six X variables obtained in 3.2, we used LR / SVM / T
 Precision: 0.951
 <br>Recall: 1.000 
 <br>F1: 0.975
-![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-LR.png)
+<br>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-LR.png)
 ## 4.2	SVM
 (We only run linear kernel due to the CPU limitation.)
 #### C = 0.001:	
 Precision: 0.951
 <br>Recall: 1.000
 <br>F1: 0.975
-![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-SVM.jpg)
+<br>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-SVM.jpg)
 ## 4.3	Decision Tree
 #### max_depth = 14:	
 Precision: 0.957
 <br>Recall: 0.997
 <br>F1: 0.977
-![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg)
+<br>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg)
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
 
 # Part 5 Redo the process in PCA dimensionality-reduced data

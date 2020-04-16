@@ -68,10 +68,12 @@ Fake jobposting posts similar-length description, requirements and benefit to ma
   * 'industry' and 'function' is also difficult to deal with and uselless for finding generality.
 #### b. Replace text features with length
  * To avoid text analysis and simplify the model, use the length of 'company_profile'，'description'，'requirements'，'benefits' to replace the text.
-#### c. Map ordinal feature: 'required_education'，'required_experience'
+#### c. Divide 'salary_range' into two features: 'salary_range_min' and 'salary_range_max'
+
+#### d. Map ordinal feature: 'required_education'，'required_experience'
  * Map required education level including 'Bachelor's Degree', 'High School or equivalent'.etc with integer from 0 to 10.
 Map required experience including 'Mid-Senior level','Associate'.etc with integer from 0 to 5.
-#### d. Use one-hot encoding to encode nominal features
+#### e. Use one-hot encoding to encode nominal features
  * Employment type is encoded to 4 columns to represent 5 different types. 
 
 ## 3.2 Feature Selection

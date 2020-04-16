@@ -1,14 +1,14 @@
-# Detecting Fake Jobposting
+# Detecting Fake Jobposting :smile:
 ## Group members
 | Name  | Student number |
 | ------------- | ------------- |
-| [魏麟懿Linyi Wei](https://github.com/Linyi-Wei)  |  1901212647 |
-| [庞博Bo Pang]()  | 1901212498  |
-| [赵舒婷Shuting Zhao](https://github.com/Shuuting) | 1901212679 |
+| [魏麟懿 Linyi Wei](https://github.com/Linyi-Wei)  |  1901212647 |
+| [庞博 Bo Pang]()  | 1901212498  |
+| [赵舒婷 Shuting Zhao](https://github.com/Shuuting) | 1901212679 |
 # PART 1 Introduction
 ## 1.1 Motivation
 Recently, there's a news that a finance major pretended to be a interviewer of CICC or CITIC to get answesrs of written examination from those interviewers. With such scams keeping emerging, abilities to identfy fake jobposting becomes more important. In the past years, people distinguish fake jobposting by intuition. For example, abnormal high wage may suggest fake jobposting. While nowadays big data techique enable us to process these jobposting data and identify fake ones more reliable using model.
-<br>`Our goal of this project is to train classifiers to recognize fake or real jobposting` using features like location,department,salary_range,benefits,required_experience,required_education,industry and so on.
+<br>`Our goal of this project is to train classifiers to recognize fake or real jobposting` using features like location, department, salary_range, benefits, required_experience, required_education, industry and so on.
 ## 1.2 Data Sources
 Dataset of real and fake job postings created by Shivam Bansal:<br>https://www.kaggle.com/shivamb/real-or-fake-fake-jobposting-prediction 
 <br>Our data preprocessing also referred to this notebook:<br>https://www.kaggle.com/nikitaalbert/is-this-job-for-real
@@ -80,4 +80,60 @@ After feature trimming, there are 17 features. In the meantime,  one-hot excodin
        'employment_type_Part-time', 'employment_type_Temporary',
        'employment_type_Unknown') which perform a relative high accuracy over 0.975. 
 <br>After feature selection, training accuracy is 0.979 and test accuracy is 0.977 with only no more than 0.5 percent differences to that before. Six features is reasonable to be selected.
+
+# Part 4 Model training, evaluation, and hyperparameter tuning in cross validation
+For the y variable and the six X variables obtained in 3.2, we used LR / SVM / Tree three classification methods to fit the model, and called the GridSearchCV package to carry out Cross-Validation.
+<br>As mentioned in our motivation section, many fake JD senders will often ask the delivery person to solve many additional problems, and these answers are often used for profit. Our research goal is to avoid the loss of time, energy and personal information exposure caused by delivering information to fake JD. In our sample, we use y = 0 (true JD) as the positive label parameter in the code, so we use PRE as the model cross-validation screening and evaluation standard. The larger the PRE value, the smaller the FP/P ratio, and the easier it is for job seekers to avoid false JD.
+<br>Listed below are the optimal parameters and corresponding confusion_matrix we obtained for different models.
+
+## 4.1	Logistic Regression
+<br><img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-LR.png"/>
+#### C = 0.001:
+Precision: 0.951
+<br>Recall: 1.000 
+<br>F1: 0.975
+
+## 4.2	SVM
+(We only run linear kernel due to the CPU limitation.)
+<img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-SVM.jpg"/>
+#### C = 0.001:	
+Precision: 0.951
+<br>Recall: 1.000
+<br>F1: 0.975
+
+## 4.3	Decision Tree
+<img align="right" src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/KNN-Tree.jpg"/>
+
+#### max_depth = 14:	
+Precision: 0.957
+<br>Recall: 0.997
+<br>F1: 0.977
+<br>
+<br>
+<br>
+<br>
+<br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
+
+# Part 5 Redo the process in PCA dimensionality-reduced data
+In this part, we use PCA method to replace the KNN method in 3.2. We set components n=2 for better program velocity. After that, we conduct LR/SVM/Tree algorithms again. Notice in code we use pipeline method to package them together.
+The following table illustrates the final results for our models.
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
+| Trust All JD | 0.951 | 1.000 | 0.975 |
+| KNN_LR | 0.951 | 1.000 | 0.975 |
+| KNN_SVM(linear) | 0.951 | 1.000 | 0.975 |
+| KNN_Tree | 0.957 | 0.997 | 0.977 |
+| PCA_LR | 0.884 | 0.936 | 0.909 |
+| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
+| PCA_Tree | 0.974* | 0.875 | 0.922 |
+
+We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
+<br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/ROC.jpg)</div>
+
+# Part 6 Possible Improvements
+Now we only get preliminary results. Listed below are some of the problems we encountered in the operation, which we will correct in the final submitted project.
+* Our data is unbalanced now. We are planning to do some up-sampling and rerun the code later.
+* For KNN-SVM and PCA in part 5, we were in a hurry and just picked ‘linear kernel’ and components n = 2 to make the code run faster. We will try to update the calculation results using Google Cloud.
+* The PRE score of these models need to be further improved. We’ll try to run some complicated models such as Bagging, AdaBoost, RandomForest if the CPU and our abilities allow.
 

@@ -36,6 +36,8 @@ There are 18 variables initially contains 17 features and one target label.
 |function| Consulting, Engineering, Research, Sales etc.|
 |fraudulent| target - Classification attribute.|
 ## 1.4 Framework
+<img hight=500 width=400 src="https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/Format.jpg"/>
+<br>
 ![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/Format.jpg)
 
 # Part 2 Exploratory Data Analysis

@@ -8,7 +8,7 @@
 # PART 1 Introduction
 ## 1.1 Motivation
 Recently, there's a news that a finance major pretended to be a interviewer of CICC or CITIC to get answesrs of written examination from those interviewees. With such scams keeping emerging, abilities to identfy fake jobposting becomes more important. In the past years, people distinguish fake jobposting by intuition. For example, abnormal high wage may suggest fake jobposting. While nowadays big data techique enable us to process these jobposting data and identify fake ones more reliable using model.
-<br>`Our goal of this project is to train classifiers to recognize fake or real jobposting` using features like location, department, salary_range, benefits, required_experience, required_education, industry and so on.
+<br>`Our goal of this project is to train classifiers to recognize fake or real jobposting` using features like location, department, salary_range, benefits, required_experience, required_education and so on.
 ## 1.2 Data Sources
 Dataset of real and fake job postings created by Shivam Bansal:<br>https://www.kaggle.com/shivamb/real-or-fake-fake-jobposting-prediction 
 <br>Our data preprocessing also referred to this notebook:<br>https://www.kaggle.com/nikitaalbert/is-this-job-for-real

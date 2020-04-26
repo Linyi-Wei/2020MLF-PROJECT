@@ -83,6 +83,11 @@ After feature trimming, there are 17 features. In the meantime,  one-hot excodin
        'employment_type_Unknown') which perform a relative high accuracy over 0.975. 
 <br>After feature selection, training accuracy is 0.979 and test accuracy is 0.977 with only no more than 0.5 percent differences to that before. Six features is reasonable to be selected.
 
+## 3.3 Feature correlation
+After feature selection based on KNN, we also test the correlation of these features. And the results are shown below.
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.Data%20Preprocessing/data%20correlation.jpg)</div>
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.Data%20Preprocessing/feature%20correlation.jpg)</div>
+
 # Part 4 Model training, evaluation, and hyperparameter tuning in cross validation
 For the y variable and the six X variables obtained in 3.2, we used LR / SVM / Tree three classification methods to fit the model, and called the GridSearchCV package to carry out Cross-Validation.
 <br>As mentioned in our motivation section, many fake JD senders will often ask the delivery person to solve many additional problems, and these answers are often used for profit. Our research goal is to avoid the loss of time, energy and personal information exposure caused by delivering information to fake JD. In our sample, we use y = 0 (true JD) as the positive label parameter in the code, so we use PRE as the model cross-validation screening and evaluation standard. The larger the PRE value, the smaller the FP/P ratio, and the easier it is for job seekers to avoid false JD.
@@ -112,6 +117,7 @@ Precision: 0.957
 <br>F1: 0.977
 <br>
 <br>
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/Decision%20Tree.jpg)</div>
 <br>
 <br>
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
@@ -121,10 +127,6 @@ In this part, we use PCA method to replace the KNN method in 3.2. We set compone
 The following table illustrates the final results for our models.
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
-| Trust All JD | 0.951 | 1.000 | 0.975 |
-| KNN_LR | 0.951 | 1.000 | 0.975 |
-| KNN_SVM(linear) | 0.951 | 1.000 | 0.975 |
-| KNN_Tree | 0.957 | 0.997 | 0.977 |
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
 | PCA_Tree | 0.974* | 0.875 | 0.922 |
@@ -133,9 +135,44 @@ We can see that for Logistic Regression the PCA method is worse than the KNN, bu
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
 <br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/ROC.jpg)</div>
 
-# Part 6 Possible Improvements
-Now we only get preliminary results. Listed below are some of the problems we encountered in the operation, which we will correct in the final submitted project.
-* Our data is unbalanced now. We are planning to do some up-sampling and rerun the code later.
-* For KNN-SVM and PCA in part 5, we were in a hurry and just picked ‘linear kernel’ and components n = 2 to make the code run faster. We will try to update the calculation results using Google Cloud.
-* The PRE score of these models need to be further improved. We’ll try to run some complicated models such as Bagging, AdaBoost, RandomForest if the CPU and our abilities allow.
+# Part 6 Apply more advanced model: Random forest, Bagging and Adaboost
+In this part, we use both PCA dimensionality-reduced data and KNN feature selection data. These data are both put into training Random forest, Bagging and Adaboost these three model. 
+<br>In order to show our results more succinctly, the following table is used to show the results. 
+<br>
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
+| KNN_RF | 0.991 |  0.988 | 0.989 |
+| KNN_Bagging | 0.993 | 0.987 | 0.990 |
+| KNN_Adaboost | 0.994 | 0.976 | 0.985 |
+| PCA_RF | 0.943 | 0.941 | 0.942 |
+| PCA_Bagging | 0.946 | 0.943 | 0.945 |
+| PCA_Adaboost | 0.848 | 0.960 | 0.901 |
+<br>
+<br>
+   We can see the models based on KNN data shows a higher Precision, which are better models. The reason behind this is that we just use 2 pca components. But part3.3 show that the feature correlation is very weak, which means 2 pca components are not enough to represent the whole feature and explain the results.
+   As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
+<br>
+<br>
+Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
+<br>
+<br>
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
+| KNN_LR | 0.951 | 1.000 | 0.975 |
+| KNN_SVM(line) | 0.951 | 1.000 | 0.975 |
+| KNN_Tree | 0.957 | 0.997 | 0.922 |
+| PCA_LR | 0.884 | 0.936 | 0.909 |
+| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
+| PCA_Tree | 0.974* | 0.875 | 0.977 |
+| KNN_RF | 0.991 |  0.988 | 0.989 |
+| KNN_Bagging | 0.993 | 0.987 | 0.990 |
+| KNN_Adaboost | 0.994 | 0.976 | 0.985 |
+| PCA_RF | 0.943 | 0.941 | 0.942 |
+| PCA_Bagging | 0.946 | 0.943 | 0.945 |
+| PCA_Adaboost | 0.848 | 0.960 | 0.901 |
+<br>
+<br>
+Based on the table, Adaboost based on KNN data shows the best results.
 
+# Part7 Upsampling
+Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We use upsampling to see if our model works.

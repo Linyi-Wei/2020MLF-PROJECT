@@ -83,6 +83,11 @@ After feature trimming, there are 17 features. In the meantime,  one-hot excodin
        'employment_type_Unknown') which perform a relative high accuracy over 0.975. 
 <br>After feature selection, training accuracy is 0.979 and test accuracy is 0.977 with only no more than 0.5 percent differences to that before. Six features is reasonable to be selected.
 
+## 3.3 Feature correlation
+After feature selection based on KNN, we also test the correlation of these features. And the results are shown below.
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.Data%20Preprocessing/data%20correlation.jpg)</div>
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/3.Data%20Preprocessing/feature%20correlation.jpg)</div>
+
 # Part 4 Model training, evaluation, and hyperparameter tuning in cross validation
 For the y variable and the six X variables obtained in 3.2, we used LR / SVM / Tree three classification methods to fit the model, and called the GridSearchCV package to carry out Cross-Validation.
 <br>As mentioned in our motivation section, many fake JD senders will often ask the delivery person to solve many additional problems, and these answers are often used for profit. Our research goal is to avoid the loss of time, energy and personal information exposure caused by delivering information to fake JD. In our sample, we use y = 0 (true JD) as the positive label parameter in the code, so we use PRE as the model cross-validation screening and evaluation standard. The larger the PRE value, the smaller the FP/P ratio, and the easier it is for job seekers to avoid false JD.

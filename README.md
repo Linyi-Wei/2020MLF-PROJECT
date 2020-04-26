@@ -176,7 +176,7 @@ Based on the table, Adaboost based on KNN data shows the best results.
 Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We do the upsampling to see if our model works.
 <br>Firstly, do the upsampling; 
 <br>Secondly, do the KNN feature selection. Based on the picture below, we choose the 6 features.
-<br>Finally, do the model training above and show the results
+<br>Finally, do the model training above and show the results.
  <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
@@ -194,3 +194,7 @@ Because in our raw dara, there are many true job description, which means you se
 | PCA_Adaboost | 0.677 | 0.614 | 0.644 |
  <br>
  <br>
+Random Forest and Adaboost based on upsampling pca data show the best results. After upsampling, we can see the precision index of all the training models all tend to decline. It's reasonable. Because we enlarge the possibility of choosing the fake job. The models above verifies the efficiency of our prediction. 
+
+# Part9 Explain the behind logistics of our prediction
+#### Based on the picture of the tree classifier, we can see the salary range and required education play important roles in prediction. That's because for the fake job, they usually don't care your education(which shows your working ability) and salary range(which is about the company's labor cost). This two items is the most two important factors that the company cares about. This is why these two factor play important roles in prediction.

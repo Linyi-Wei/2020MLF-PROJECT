@@ -152,10 +152,11 @@ We can see the models based on KNN data shows a higher Precision, which are bett
 <br>As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
 <br>
 Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
+<br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
 | KNN_LR | 0.951 | 1.000 | 0.975 |
-| KNN_SVM(rbf) | 0.951 | 1.000 | 0.975 |
+| KNN_SVM(line) | 0.951 | 1.000 | 0.975 |
 | KNN_Tree | 0.957 | 0.997 | 0.922 |
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
@@ -166,4 +167,5 @@ Generally speaking, the following table shows all the traing model results based
 | PCA_RF | 0.943 | 0.941 | 0.942 |
 | PCA_Bagging | 0.946 | 0.943 | 0.945 |
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
+<br>
 Based on the table, Adaboost based on KNN data shows the best results.

@@ -178,7 +178,6 @@ Because in our raw dara, there are many true job description, which means you se
 #### b. do the KNN feature selection
  * Based on the picture below, we choose the 6 features.
 #### c. Show the results
- * pca components is 2
  <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |

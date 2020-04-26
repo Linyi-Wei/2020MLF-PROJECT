@@ -151,7 +151,10 @@ In this part, we use both PCA dimensionality-reduced data and KNN feature select
 <br>
    We can see the models based on KNN data shows a higher Precision, which are better models. The reason behind this is that we just use 2 pca components. But part3.3 show that the feature correlation is very weak, which means 2 pca components are not enough to represent the whole feature and explain the results.
    As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
-<br>In order to show our results more succinctly, the following table is used to show the results. 
+
+# Part7 Generally speaking
+Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
+<br>
 <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
@@ -163,8 +166,9 @@ In this part, we use both PCA dimensionality-reduced data and KNN feature select
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
 <br>
 <br>
+Based on the table, Adaboost based on KNN data shows the best results.
 
-# Part7 Upsampling
+# Part8 Upsampling
 Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We do the upsampling to see if our model works.
 #### a. do the upsampling
 #### b. do the KNN feature selection

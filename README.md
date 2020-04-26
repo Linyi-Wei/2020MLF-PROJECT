@@ -193,7 +193,6 @@ Because in our raw dara, there are many true job description, which means you se
 | PCA_Bagging | 1.000 | 0.927 | 0.962 |
 | PCA_Adaboost | 0.677 | 0.614 | 0.644 |
  <br>
- <br>
 Random Forest and Adaboost based on upsampling pca data show the best results. After upsampling, we can see the precision index of all the training models all tend to decline. It's reasonable. Because we enlarge the possibility of choosing the fake job. The models above verifies the efficiency of our prediction. 
 
 # Part9 Explain the behind logistics of our prediction

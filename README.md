@@ -155,19 +155,17 @@ In this part, we use both PCA dimensionality-reduced data and KNN feature select
 # Part7 Generally speaking
 Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
 <br>
-<br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
+| PCA_LR | 0.884 | 0.936 | 0.909 |
+| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
+| PCA_Tree | 0.974* | 0.875 | 0.922 |
 | KNN_RF | 0.991 |  0.988 | 0.989 |
 | KNN_Bagging | 0.993 | 0.987 | 0.990 |
 | KNN_Adaboost | 0.994 | 0.976 | 0.985 |
 | PCA_RF | 0.943 | 0.941 | 0.942 |
 | PCA_Bagging | 0.946 | 0.943 | 0.945 |
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
-| PCA_LR | 0.884 | 0.936 | 0.909 |
-| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
-| PCA_Tree | 0.974* | 0.875 | 0.922 |
-<br>
 <br>
 Based on the table, Adaboost based on KNN data shows the best results.
 

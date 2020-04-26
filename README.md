@@ -135,7 +135,7 @@ We can see that for Logistic Regression the PCA method is worse than the KNN, bu
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
 <br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/ROC.jpg)</div>
 
-# Part 6 Apply more advanced model: Random forest/Bagging/Adaboost
+# Part 6 Apply more advanced model: Random forest, Bagging and Adaboost
 In this part, we use both PCA dimensionality-reduced data and KNN feature selection data. These data are both put into training Random forest, Bagging and Adaboost these three model. 
 <br>In order to show our results more succinctly, the following table is used to show the results. 
 <br>
@@ -150,8 +150,7 @@ In this part, we use both PCA dimensionality-reduced data and KNN feature select
 <br>
 We can see the models based on KNN data shows a higher Precision, which are better models. The reason behind this is that we just use 2 pca components. But part3.3 show that the feature correlation is very weak, which means 2 pca components are not enough to represent the whole feature and explain the results.
 <br>As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
-<br>
-Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
+<br>Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
 <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
@@ -169,3 +168,6 @@ Generally speaking, the following table shows all the traing model results based
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
 <br>
 Based on the table, Adaboost based on KNN data shows the best results.
+
+# Part7 Upsampling
+Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We use upsampling to see if our model works.

@@ -129,7 +129,7 @@ The following table illustrates the final results for our models.
 | ------|------- | ------|------- |
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
-| PCA_Tree | 0.974* | 0.875 | 0.922 |
+| PCA_Tree(max_depth=14) | 0.974* | 0.875 | 0.922 |
 
 We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
@@ -159,10 +159,10 @@ Generally speaking, the following table shows all the traing model results based
 | ------|------- | ------|------- |
 | KNN_LR | 0.951 | 1.000 | 0.975 |
 | KNN_SVM(line) | 0.951 | 1.000 | 0.975 |
-| KNN_Tree | 0.957 | 0.997 | 0.977 |
+| KNN_Tree(max_depth=14)  | 0.957 | 0.997 | 0.977 |
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
-| PCA_Tree | 0.974* | 0.875 | 0.922 |
+| PCA_Tree(max_depth=14) | 0.974* | 0.875 | 0.922 |
 | KNN_RF | 0.991 |  0.988 | 0.989 |
 | KNN_Bagging | 0.993 | 0.987 | 0.990 |
 | KNN_Adaboost | 0.994 | 0.976 | 0.985 |
@@ -177,3 +177,21 @@ Because in our raw dara, there are many true job description, which means you se
 #### a. do the upsampling
 #### b. do the KNN feature selection
  * Based on the picture below, we choose the 6 features.
+#### c. Show the results
+ * pca components is 2
+ <br>
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
+| KNN_LR | 0.627 | 0.347 | 0.447 |
+| KNN_SVM(line) | 0.631 | 0.355 | 0.455 |
+| KNN_Tree(max_depth=15) | 0.892 | 0.860 | 0.876 |
+| PCA_LR | 0.558 | 0.534 | 0.546 |
+| PCA_SVM(rbf) | 0.553 | 0.547 | 0.550 |
+| PCA_Tree(max_depth=15) | 0.914 | 0.827 | 0.868 |
+| KNN_RF | 0.991 |  0.988 | 0.989 |
+| KNN_Bagging | 0.993 | 0.987 | 0.990 |
+| KNN_Adaboost | 0.994 | 0.976 | 0.985 |
+| PCA_RF | 1.000 | 0.927 | 0.962 |
+| PCA_Bagging | 1.000 | 0.927 | 0.962 |
+| PCA_Adaboost | 0.677 | 0.614 | 0.644 |
+ <br>

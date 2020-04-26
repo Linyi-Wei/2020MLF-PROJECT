@@ -164,6 +164,9 @@ Generally speaking, the following table shows all the traing model results based
 | PCA_RF | 0.943 | 0.941 | 0.942 |
 | PCA_Bagging | 0.946 | 0.943 | 0.945 |
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
+| PCA_LR | 0.884 | 0.936 | 0.909 |
+| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
+| PCA_Tree | 0.974* | 0.875 | 0.922 |
 <br>
 <br>
 Based on the table, Adaboost based on KNN data shows the best results.

@@ -116,9 +116,7 @@ Precision: 0.957
 <br>Recall: 0.997
 <br>F1: 0.977
 <br>
-<br>
-<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training/Decision%20Tree.jpg)</div>
-<br>
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training%20%26%20Upsampling/tree.png)</div>
 <br>
 <br>Among these 3 methods, Decision Tree provides the best results with PRE= 95.7%. Notice that both LR and SVM give the same PRE as randomly trusting every JD, so we guess there may be some problems in KNN feature selection. This is why we try the PCA method in next part.
 
@@ -176,6 +174,7 @@ Based on the table, Adaboost based on KNN data shows the best results.
 Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We do the upsampling to see if our model works.
 <br>Firstly, do the upsampling; 
 <br>Secondly, do the KNN feature selection. Based on the picture below, we choose the 6 features.
+<br><div align=center>![](https://github.com/Linyi-Wei/2020MLF-PROJECT/blob/master/4.Model%20training%20%26%20Upsampling/KNN%20after%20upsampling.jpg)</div>
 <br>Finally, do the model training above and show the results.
  <br>
 |Model Type| PRE* | REC | F1-score |

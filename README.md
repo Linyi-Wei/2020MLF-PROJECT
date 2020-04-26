@@ -175,4 +175,7 @@ Generally speaking, the following table shows all the traing model results based
 Based on the table, Adaboost based on KNN data shows the best results.
 
 # Part7 Upsampling
-Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We use upsampling to see if our model works.
+Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We do the upsampling to see if our model works.
+#### a. do the upsampling
+#### b. do the KNN feature selection
+ * Based on the picture below, we choose the 6 features.

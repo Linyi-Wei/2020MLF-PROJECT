@@ -158,12 +158,6 @@ Generally speaking, the following table shows all the traing model results based
 <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
-| KNN_LR | 0.951 | 1.000 | 0.975 |
-| KNN_SVM(line) | 0.951 | 1.000 | 0.975 |
-| KNN_Tree | 0.957 | 0.997 | 0.922 |
-| PCA_LR | 0.884 | 0.936 | 0.909 |
-| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
-| PCA_Tree | 0.974* | 0.875 | 0.977 |
 | KNN_RF | 0.991 |  0.988 | 0.989 |
 | KNN_Bagging | 0.993 | 0.987 | 0.990 |
 | KNN_Adaboost | 0.994 | 0.976 | 0.985 |

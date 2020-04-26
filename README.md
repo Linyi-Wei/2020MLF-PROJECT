@@ -150,3 +150,20 @@ In this part, we use both PCA dimensionality-reduced data and KNN feature select
 <br>
 We can see the models based on KNN data shows a higher Precision, which are better models. The reason behind this is that we just use 2 pca components. But part3.3 show that the feature correlation is very weak, which means 2 pca components are not enough to represent the whole feature and explain the results.
 <br>As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
+<br>
+Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
+| KNN_LR | 0.951 | 1.000 | 0.975 |
+| KNN_SVM(rbf) | 0.951 | 1.000 | 0.975 |
+| KNN_Tree | 0.957 | 0.997 | 0.922 |
+| PCA_LR | 0.884 | 0.936 | 0.909 |
+| PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
+| PCA_Tree | 0.974* | 0.875 | 0.977 |
+| KNN_RF | 0.991 |  0.988 | 0.989 |
+| KNN_Bagging | 0.993 | 0.987 | 0.990 |
+| KNN_Adaboost | 0.994 | 0.976 | 0.985 |
+| PCA_RF | 0.943 | 0.941 | 0.942 |
+| PCA_Bagging | 0.946 | 0.943 | 0.945 |
+| PCA_Adaboost | 0.848 | 0.960 | 0.901 |
+Based on the table, Adaboost based on KNN data shows the best results.

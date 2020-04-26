@@ -129,7 +129,7 @@ The following table illustrates the final results for our models.
 | ------|------- | ------|------- |
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
-| PCA_Tree | 0.974* | 0.875 | 0.922 |
+| PCA_Tree(max_depth=14) | 0.974* | 0.875 | 0.922 |
 
 We can see that for Logistic Regression the PCA method is worse than the KNN, but SVM and Decision Tree show the different, which means PCA covers some additional info than KNN. (PS: We only have two X features now, so we use better Grid -Search hyper parameters. Hence the increase in SVM may due to this cross-validation change.)
 <br>Notice that PCA-Tree, with 0.974 PRE, is the best method among them. We draw an ROC curve to deeply analyze this model.
@@ -149,21 +149,20 @@ In this part, we use both PCA dimensionality-reduced data and KNN feature select
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
 <br>
 <br>
-   We can see the models based on KNN data shows a higher Precision, which are better models. The reason behind this is that we just use 2 pca components. But part3.3 show that the feature correlation is very weak, which means 2 pca components are not enough to represent the whole feature and explain the results.
-   As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
-<br>
-<br>
+<br>We can see the models based on KNN data shows a higher Precision, which are better models. The reason behind this is that we just use 2 pca components. But part3.3 show that the feature correlation is very weak, which means 2 pca components are not enough to represent the whole feature and explain the results.
+<br>As we mentioned above, we care more about the precision index. In the models based on KNN data, the adaboost shows the best results.
+
+# Part7 Generally Comparison
 Generally speaking, the following table shows all the traing model results based both PCA and KNN data.
-<br>
 <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
 | KNN_LR | 0.951 | 1.000 | 0.975 |
 | KNN_SVM(line) | 0.951 | 1.000 | 0.975 |
-| KNN_Tree | 0.957 | 0.997 | 0.922 |
+| KNN_Tree(max_depth=14)  | 0.957 | 0.997 | 0.977 |
 | PCA_LR | 0.884 | 0.936 | 0.909 |
 | PCA_SVM(rbf) | 0.972 | 0.919 | 0.945 |
-| PCA_Tree | 0.974* | 0.875 | 0.977 |
+| PCA_Tree(max_depth=14) | 0.974* | 0.875 | 0.922 |
 | KNN_RF | 0.991 |  0.988 | 0.989 |
 | KNN_Bagging | 0.993 | 0.987 | 0.990 |
 | KNN_Adaboost | 0.994 | 0.976 | 0.985 |
@@ -171,8 +170,30 @@ Generally speaking, the following table shows all the traing model results based
 | PCA_Bagging | 0.946 | 0.943 | 0.945 |
 | PCA_Adaboost | 0.848 | 0.960 | 0.901 |
 <br>
-<br>
 Based on the table, Adaboost based on KNN data shows the best results.
 
-# Part7 Upsampling
-Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We use upsampling to see if our model works.
+# Part8 Upsampling
+Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We do the upsampling to see if our model works.
+<br>Firstly, do the upsampling; 
+<br>Secondly, do the KNN feature selection. Based on the picture below, we choose the 6 features.
+<br>Finally, do the model training above and show the results.
+ <br>
+|Model Type| PRE* | REC | F1-score |
+| ------|------- | ------|------- |
+| KNN_LR | 0.627 | 0.347 | 0.447 |
+| KNN_SVM(line) | 0.631 | 0.355 | 0.455 |
+| KNN_Tree(max_depth=15) | 0.892 | 0.860 | 0.876 |
+| PCA_LR | 0.558 | 0.534 | 0.546 |
+| PCA_SVM(rbf) | 0.553 | 0.547 | 0.550 |
+| PCA_Tree(max_depth=15) | 0.914 | 0.827 | 0.868 |
+| KNN_RF | 0.991 |  0.988 | 0.989 |
+| KNN_Bagging | 0.993 | 0.987 | 0.990 |
+| KNN_Adaboost | 0.994 | 0.976 | 0.985 |
+| PCA_RF | 1.000 | 0.927 | 0.962 |
+| PCA_Bagging | 1.000 | 0.927 | 0.962 |
+| PCA_Adaboost | 0.677 | 0.614 | 0.644 |
+ <br>
+Random Forest and Adaboost based on upsampling pca data show the best results. After upsampling, we can see the precision index of all the training models all tend to decline. It's reasonable. Because we enlarge the possibility of choosing the fake job. The models above verifies the efficiency of our prediction. 
+
+# Part9 Explain the behind logistics of our prediction
+#### Based on the picture of the tree classifier, we can see the salary range and required education play important roles in prediction. That's because for the fake job, they usually don't care your education(which shows your working ability) and salary range(which is about the company's labor cost). This two items is the most two important factors that the company cares about. This is why these two factor play important roles in prediction.

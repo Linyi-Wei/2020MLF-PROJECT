@@ -174,6 +174,9 @@ Based on the table, Adaboost based on KNN data shows the best results.
 
 # Part8 Upsampling
 Because in our raw dara, there are many true job description, which means you selec the job casually and without any consideration, the possibility that you choose the fake job will be very low. So our raw data is very imbalanced. We do the upsampling to see if our model works.
+Firstly, do the upsampling; 
+Secondly, do the KNN feature selection. Based on the picture below, we choose the 6 features.
+Finally, do the model training above and show the results
  <br>
 |Model Type| PRE* | REC | F1-score |
 | ------|------- | ------|------- |
@@ -190,8 +193,4 @@ Because in our raw dara, there are many true job description, which means you se
 | PCA_Bagging | 1.000 | 0.927 | 0.962 |
 | PCA_Adaboost | 0.677 | 0.614 | 0.644 |
  <br>
-#### a. do the upsampling
-#### b. do the KNN feature selection
- * Based on the picture below, we choose the 6 features.
-#### c. Show the results
 

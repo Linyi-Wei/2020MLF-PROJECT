@@ -57,6 +57,8 @@ We want to see whether the length of 'company_profile', 'description', 'requirem
 Fake jobposting posts similar-length description, requirements and benefit to make them more reliable. While there's differences in company profile. Fake jobpostings are not tend to post short & long company profile.
 
 # Part 3 Data Preprocessing
+Our data preprocessing referred to this notebook(mainly graphs):
+<br>![](https://www.kaggle.com/nikitaalbert/is-this-job-for-real)
 ## 3.1 Feature trimming
 #### a. Delete 6 features for reasons as follows:
   * 'job_id' is unique for each sample and useless for detecting fake job.
